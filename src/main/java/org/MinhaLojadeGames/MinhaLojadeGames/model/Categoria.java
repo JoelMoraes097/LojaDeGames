@@ -24,5 +24,34 @@ public class Categoria {
 	@NotBlank
 	@Size(min=15, max=500)
 	private String descricaoCategoria;
+	
+	
+
+	public long getIdCategoria() {
+		return idCategoria;
+	}
+
+	public void setIdCategoria(long idCategoria) {
+		this.idCategoria = idCategoria;
+	}
+
+	public String getNomeCategoria() {
+		return nomeCategoria;
+	}
+
+	public void setNomeCategoria(String nomeCategoria) {
+		this.nomeCategoria = nomeCategoria;
+	}
+
+	public String getDescricaoCategoria() {
+		return descricaoCategoria;
+	}
+
+	public void setDescricaoCategoria(String descricaoCategoria) {
+		this.descricaoCategoria = descricaoCategoria;
+	}
+	
+	
+	
 
 }
