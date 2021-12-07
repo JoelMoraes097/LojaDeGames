@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -21,21 +22,23 @@ public class Produto {
 	private long idProduto;
 
 	@NotBlank
-	@Size(min = 10, max = 30)
+	@Size(min = 5, max = 30)
 	private String nomeProduto;
 
 	@NotBlank
-	@Size(min = 15, max = 500)
+	@Size(min = 5, max = 500)
 	private String descricaoProduto;
 
-	@NotBlank
+	@NotNull
 	private double precoProduto;
 
 	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_categoria")
 	private Categoria categoriaGame;
+	
+	
 
-	long getIdProduto() {
+	public long getIdProduto() {
 		return idProduto;
 	}
 
