@@ -1,9 +1,13 @@
 package org.MinhaLojadeGames.MinhaLojadeGames.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -13,21 +17,25 @@ import javax.validation.constraints.Size;
 public class Produto {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long idProduto;
-	
+
 	@NotBlank
-	@Size(min=10, max=30)
+	@Size(min = 10, max = 30)
 	private String nomeProduto;
-	
+
 	@NotBlank
-	@Size(min=15, max=500)
+	@Size(min = 15, max = 500)
 	private String descricaoProduto;
-	
+
 	@NotBlank
 	private double precoProduto;
 
-	public long getIdProduto() {
+	@ManyToOne(cascade = CascadeType.REMOVE, fetch = FetchType.EAGER)
+	@JoinColumn(name = "fk_categoria")
+	private Categoria categoriaGame;
+
+	long getIdProduto() {
 		return idProduto;
 	}
 
@@ -58,5 +66,13 @@ public class Produto {
 	public void setPrecoProduto(double precoProduto) {
 		this.precoProduto = precoProduto;
 	}
-	
+
+	public Categoria getCategoriaGame() {
+		return categoriaGame;
+	}
+
+	public void setCategoriaGame(Categoria categoriaGame) {
+		this.categoriaGame = categoriaGame;
+	}
+
 }
