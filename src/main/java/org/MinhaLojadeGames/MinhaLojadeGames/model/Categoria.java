@@ -25,15 +25,15 @@ public class Categoria {
 	private long idCategoria;
 
 	@NotBlank
-	@Size(min = 10, max = 30)
+	@Size(min = 5, max = 30)
 	private String nomeCategoria;
 
 	@NotBlank
-	@Size(min = 15, max = 500)
+	@Size(min = 5, max = 500)
 	private String descricaoCategoria;
 
 	@OneToMany(mappedBy = "categoriaGame", cascade = CascadeType.REMOVE)
-	@JsonIgnoreProperties("categoria")
+	@JsonIgnoreProperties("categoriaGame")
 	private List<Produto> produtoGame = new ArrayList<>();
 
 	public long getIdCategoria() {
