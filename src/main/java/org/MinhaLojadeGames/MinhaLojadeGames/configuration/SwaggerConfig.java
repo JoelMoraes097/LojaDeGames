@@ -19,15 +19,15 @@ public class SwaggerConfig {
 						.title ("Loja de Games")
 						.description ("Loja de Games - Generation Brasil")
 						.version ("v0.0.1")
-					.license(new License()
+						.license(new License()
 								.name("Generation Brasil")
 								.url("http://brazil,genaeration,org/"))
-					.contact (new Contact()
-								.name("Loja de Games")
-								.url("https://github.com/pedro-borelli/LojaDeGames")
+						.contact (new Contact()
+								.name("GitHub Pedro Borelli")
+								.url("https://github.com/pedro-borelli/")
 								.email("pedroborelli@gmail.com")))
 					.externalDocs (new ExternalDocumentation()
-							.description("GirHub")
+							.description("GitHub")
 							.url("https://github.com/pedro-borelli/LojaDeGames"));
 	}
 }
