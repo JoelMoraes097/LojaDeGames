@@ -1,5 +1,6 @@
 package org.MinhaLojadeGames.MinhaLojadeGames.model;
 
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -39,8 +40,6 @@ public class Produto {
 	@JsonIgnoreProperties("produtoGame")
 	private Categoria categoriaGame;
 	
-	
-
 	public long getIdProduto() {
 		return idProduto;
 	}
